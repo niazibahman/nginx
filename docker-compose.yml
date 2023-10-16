@@ -1,7 +1,10 @@
-version: "3.9"
-
+version: '3'
 services:
-  reverse-proxy:
-    build: .
+  reverse_proxy:
+#    build: .
+    image: nginx:1.24-alpine
+    container_name: reverse_proxy
+    restart: always
+    tty: true
     ports:
-      - "80:80"
+       - "80:80"

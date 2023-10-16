@@ -1,5 +1,5 @@
-FROM nginx:latest
+FROM alpine:3.6
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN apk add --no-cache nginx-mod-http-lua
 
-EXPOSE 80
+RUN mkdir -p /run/nginx
