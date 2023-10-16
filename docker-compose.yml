@@ -4,7 +4,6 @@ services:
 #    build: .
     image: nginx:1.24-alpine
     container_name: reverse_proxy
-    restart: always
-    tty: true
+    restart: unless-stopped
     ports:
        - "80:80"
